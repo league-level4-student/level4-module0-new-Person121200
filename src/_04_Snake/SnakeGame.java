@@ -109,7 +109,12 @@ public class SnakeGame implements ActionListener, KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-
+		switch (KeyEvent.KEY_PRESSED) {
+		case KeyEvent.VK_UP:
+			snake.setDirection(Direction.UP);
+		}
+		case KeyEvent.VK_LEFT:
+			snake.setDire
 		/*
 		 * Use a switch statement to determine if an arrow key is pressed, and set the
 		 * snake's direction accordingly.

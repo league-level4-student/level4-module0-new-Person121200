@@ -70,10 +70,10 @@ public class EncapsulateTheData {
 		}
 		else {
 			if(randomPositiveNum <0) {
-				randomPositiveNum = 0;
+				degreesTurned = 0.0;
 			}
 			if(randomPositiveNum >360) {
-				randomPositiveNum = 360;
+				degreesTurned = 360.0;
 			}
 		}
 	}
@@ -93,6 +93,16 @@ public class EncapsulateTheData {
 
 	public Object getNomenclature() {
 		return nomenclature;
+	}
+
+	public void setMemberObj(Object randomObject) {
+		if(randomObject instanceof String == false) {
+			memberObj = randomObject;
+		}
+	}
+
+	public Object getMemberObj() {
+		return memberObj;
 	}
 
 }

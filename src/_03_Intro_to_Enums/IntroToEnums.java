@@ -1,5 +1,6 @@
 package _03_Intro_to_Enums;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -18,6 +19,10 @@ enum Elements {
 public class IntroToEnums {
 
 	public static void main(String[] args) {
+		String questionMatter = "";
+		Random rand = new Random();
+
+		
 
 		// 1. In your package explorer, create a new enum file called StatesOfMatter.
 		// Hint: This is very similar to how you create a new class file.
@@ -27,9 +32,38 @@ public class IntroToEnums {
 
 		// 3. Create an array of StatesOfMatter with all the values using .values().
 		// Hint: Use "StatesOfMatter." as if it were a static method.
-
+		StatesOfMatter[] matters = StatesOfMatter.values();
+		questionMatter = JOptionPane.showInputDialog("What is your state of matter?");
+		StatesOfMatter states = null;
 		// 4. Ask the user for a state of matter.
-
+		for(int i = 0; i<matters.length; i++) {
+			if(matters[i].toString() == questionMatter) {
+				System.out.println(matters[i].ordinal());
+			}
+		}
+		int random = rand.nextInt(3);
+		if(random == 0) {
+			states = StatesOfMatter.GAS;
+		}
+		else if(random == 1) {
+			states = StatesOfMatter.LIQUID;
+		}
+		else if(random == 2) {
+			states = StatesOfMatter.SOLID;
+		}
+		System.out.println(states.getCelsiusTemp() + " & " + states.convertToFarenheit(states.getCelsiusTemp()));
+		
+		switch(states) {
+		case GAS:
+			System.out.println("Air");
+			break;
+		case LIQUID:
+			System.out.println("Coconut Water");
+			break;
+		case SOLID:
+			System.out.println("Steak");
+			break;
+		}
 		// 5. Iterate through the array and find what the user entered.
 		// Hint: .name() or .toString
 
@@ -68,5 +102,6 @@ public class IntroToEnums {
 		// e.g. Gas/Boiling for Pasta, Solid/Ice for Popsicles, Liquid for Soda
 
 	}
+
 
 }
